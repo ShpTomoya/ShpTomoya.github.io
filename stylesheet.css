@@ -81,12 +81,9 @@ a {
   text-align: center;
 }
 .top-wrapper h1 {
-  opacity: 0.8;
+  opacity: 0.7;
   font-size: 45px;
   letter-spacing: 5px;
-}
-.top-wrapper p {
-  opacity: 0.7;
 }
 
 
@@ -106,13 +103,14 @@ a {
 .back-top {
   padding: 200px 0 150px 0;
 }
-
-.heading {
-  padding: 0 20px;
+.back-bottom {
+  padding: 200px 50px 50px 50px;
+  background-color: rgb(221,202,175);
 }
 
 .heading h1{
 position: relative;
+opacity: 0.7;
 padding: 0.25em 0;
 }
 .heading h1:after {
@@ -131,9 +129,17 @@ background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
   text-justify: inter-ideograph;
 }
 
-.back-bottom {
-  padding: 200px 0 50px 50px;
-  background-color: rgb(221,202,175);
+
+
+.photo-wrapper {
+  padding: 50px 0 400px 0;
+  background-image: url(https://pbs.twimg.com/media/DcCMlQaU8AAc02-.jpg:large);
+  background-size: cover;
+}
+.photo-heading h1{
+color: white;
+opacity: 0.7;
+padding: 0 50px;
 }
 
 
