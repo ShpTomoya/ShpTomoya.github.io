@@ -30,6 +30,7 @@ a {
   height: 65px;
   width: 100%;
   position: absolute;
+  top: 10px
 }
 
 .logo {
@@ -50,7 +51,7 @@ a {
   float: right;
 }
 
-.header-center a, .header-right a{
+.header-center a{
   line-height: 65px;
   padding: 0 25px;
   color: white;
@@ -58,21 +59,29 @@ a {
   float: left;
   transition: all 0.5s;
 }
+.header-right a{
+  line-height: 65px;
+  padding: 0 15px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
 .header-center a:hover, .header-right a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  color: rgb(221,202,175);
 }
 
 
 
 .top-wrapper {
-  padding: 260px 0 100px 0;
+  padding: 270px 0 110px 0;
   background-image: url(https://pbs.twimg.com/media/DbYf16YVAAElVW2.jpg:large);
   background-size: cover;
   color: white;
   text-align: center;
 }
 .top-wrapper h1 {
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 45px;
   letter-spacing: 5px;
 }
@@ -82,11 +91,48 @@ a {
 
 
 
-.back-top {
-  padding: 260px 0 100px 0;
+.about-wrapper {
+  position: relative;
 }
+
+.about-images {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 80%;
+  height: auto;
+}
+
+.back-top {
+  padding: 200px 0 150px 0;
+}
+
+.heading {
+  padding: 0 20px;
+}
+
+.heading h1{
+position: relative;
+padding: 0.25em 0;
+}
+.heading h1:after {
+content: "";
+display: block;
+height: 4px;
+background: -moz-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+}
+.message p {
+  padding: 0 100px;
+  letter-spacing: 0.1em;
+  line-height: 2.0;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
 .back-bottom {
-  padding: 260px 0 100px 0;
+  padding: 200px 0 50px 50px;
   background-color: rgb(221,202,175);
 }
 
