@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hira-tomoya</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
   </head>
@@ -17,20 +18,19 @@
           <div class="header-left">
             <p class="logo">HiraTomoya</p>
           </div>
+          <div class="clear-logo"></div>
           <div class="header-center">
-            <a href="#">TOP</a>
-            <a href="#">ABOUT</a>
-            <a href="#">PHOTO</a>
-            <a href="#">MOVIE</a>
-            <a href="#">NEWS</a>
+            <a href="#about">ABOUT</a>
+            <a href="#photo">PHOTO</a>
+            <a href="#movie">MOVIE</a>
           </div>
           <div class="header-right">
             <a href="https://twitter.com/ShpTomoya" target="_blank">
               <i class="fab fa-twitter"></i></a>
-              <a href="https://www.facebook.com/tomoya.hirabayashi.9" target="_blank">
-                <i class="fab fa-facebook-f"></i></a>
-                <a href="https://note.mu/tmy_schaf" target="_blank">
-                <i class="far fa-file"></i></a>
+            <a href="https://www.facebook.com/tomoya.hirabayashi.9" target="_blank">
+              <i class="fab fa-facebook-f"></i></a>
+            <a href="https://note.mu/tmy_schaf" target="_blank">
+              <i class="far fa-file"></i></a>
           </div>
         </div>
       </div>
@@ -42,8 +42,10 @@
       </div>
     </div>
     <div class="about-wrapper">
-      <!-- 画像をあとで置換する -->
-      <img class="about-images" src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/tomo-schaf.jpg?raw=true">
+      <img id="about" class="about-images" src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/tomo.jpg">
+<!--
+src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/tomo-schaf.jpg">
+-->
       <div class="back-top">
       </div>
       <div class="back-bottom">
@@ -57,15 +59,75 @@
         </div>
       </div>
     </div>
-    <div class="photo-wrapper">
+    <div id="photo" class="photo-wrapper">
       <div class="container">
-        <div class="photo-heading">
+        <div class="heading">
           <h1>PHOTO</h1>
+          <p>お気に入りの写真と、おすすめnote。</p>
+          <p>※画像をクリックすると、詳細を書いたnoteが開きます。</p>
+        </div>
+        <div class="photos">
+          <div class="photo">
+            <a class="photo-image" href="https://note.mu/tmy_schaf/n/nd8d003d1f9b8" target="_blank">
+              <img src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/photo.jpg">
+              <p>みんなのフォトギャラリー用の、お気に入り写真</p>
+            </a>
+            <div class="text">
+              <p>最近とった、お気に入り写真。花や自然を撮るのが好きです。</p>
+            </div>
+          </div>
+          <div class="photo">
+            <a class="photo-image" href="https://note.mu/tmy_schaf/n/n35d4cdca9620" target="_blank">
+              <img src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/park.jpg">
+              <p>信じることの先にある、自分の仕事</p>
+            </a>
+            <div class="text">
+              <p>私が仕事で大切にしたい、「価値があると信じること」について。</p>
+            </div>
+          </div>
+          <div class="photo">
+            <a class="photo-image" href="https://note.mu/tmy_schaf/n/n4f0686599324" target="_blank">
+              <img src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/simple-life.jpg">
+              <p>「ていねい過ぎない暮らし」を、楽しみたい</p>
+            </a>
+            <div class="text">
+              <p>ていねいな暮らしが好きだけど、たまにはパーティーもしたい。そんな理想のバランスについて。</p>
+            </div>
+          </div>
+          <div class="photo">
+            <a class="photo-image" href="https://note.mu/tmy_schaf/n/n4f0856e8fa16" target="_blank">
+              <img src="https://github.com/ShpTomoya/ShpTomoya.github.io/blob/master/coffee.jpg">
+              <p>小さな物語と、わずかに重なるフレーバー</p>
+            </a>
+            <div class="text">
+              <p>人間関係でで大切にしたい「共通点を見つけること」と、肩書きや経歴に頼らない自己紹介のお話。</p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div id="movie" class="movie-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h1>MOVIE</h1>
+        </div>
+        <div class="youtube">
+          <iframe width="100" height="100" src="https://www.youtube.com/embed/cNvM4vSFyy4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
     <footer>
       <div class="container">
+        <div class="social-link">
+          <a href="https://twitter.com/ShpTomoya" target="_blank">
+            <i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/tomoya.hirabayashi.9" target="_blank">
+            <i class="fab fa-facebook-f"></i></a>
+          <a href="https://note.mu/tmy_schaf" target="_blank">
+            <i class="far fa-file"></i></a>
+        </div>
+        <div class="clear"></div>
         <p class="logo">HiraTomoya</p>
         <p>Less is More. Stay Minimal, Stay Simple.</p>
       </div>
