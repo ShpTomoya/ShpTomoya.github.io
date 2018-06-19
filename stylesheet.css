@@ -104,7 +104,7 @@ a {
   padding: 200px 0 150px 0;
 }
 .back-bottom {
-  padding: 200px 5% 50px 5%;
+  padding: 200px 5% 40px 5%;
   background-color: rgb(221,202,175,0.7);
 }
 
@@ -130,19 +130,16 @@ background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
 
 
 .photo-wrapper {
-  padding-bottom: 40px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 20px 5% 40px 5%;
+}
+.photo-read {
+  padding-bottom: 20px;
 }
 
-.photos {
-  padding-top: 20px;
-}
 .photo {
   float: left;
   width: 25%;
 }
-
 .photo-image {
   position: relative;
   font-size: 12px;
