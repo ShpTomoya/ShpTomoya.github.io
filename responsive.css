@@ -1,0 +1,73 @@
+/* タブレット向けレイアウト */
+@media all and (max-width: 1000px) {
+  .top-wrapper h1 {
+    font-size: 32px;
+  }
+
+	.back-top {
+	  padding: 130px 0 150px 0;
+	}
+
+  .photo {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+}
+
+/* モバイル向けレイアウト */
+@media all and (max-width: 670px) {
+
+	.header-center {
+		float: right;
+	}
+	.header-right {
+		display: none;
+	}
+
+	.header-center a{
+	  line-height: 65px;
+	  padding: 0 15px;
+	  color: white;
+	  display: block;
+	  float: left;
+	  transition: all 0.5s;
+	}
+
+  .top-wrapper {
+    text-align: left;
+  }
+  .top-wrapper h1 {
+    font-size: 24px;
+  }
+
+	.back-top, .about-images {
+		display: none;
+	}
+	.back-bottom {
+		padding: 50px 5% 50px 5%;
+		background-color: rgb(221,202,175,0.7);
+	}
+
+  .photo {
+    width: 100%;
+  }
+
+  .message-wrapper .btn {
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
+  }
+	.social-link {
+		display: inline-block;
+	}
+	.social-link a {
+	  line-height: 65px;
+	  padding: 0 15px;
+	  color: #b3aeb5;
+		display: inline-block;
+	  float: left;
+	  transition: all 0.5s;
+	}
+}
