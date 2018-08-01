@@ -3,7 +3,7 @@ var propertiy = PropertiesService.getScriptProperties();
 var CHANNEL_ACCESS_TOKEN = propertiy.getProperty('CHANNEL_ACCESS_TOKEN');
 
 // メッセージ一覧
-var ERRORMESSAGE_NOT_IMG = "なーに？画像じゃないと僕わからない！";
+var ERRORMESSAGE_NOT_IMG = "なーに？画像じゃないとぼく読めないよ！";
 var ERRORMESSAGE_TRY_CATCH = "ごめん、文字が読めなかった！";
 
 // doPost関数（LINEからメッセージが送られてきたに呼び出される関数）
