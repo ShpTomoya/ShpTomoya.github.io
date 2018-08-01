@@ -1,0 +1,68 @@
+// 「プロジェクトのプロパティ」 > 「スクリプトのプロパティ」からLINEのアクセストークンを取得する
+var propertiy = PropertiesService.getScriptProperties();                  
+var CHANNEL_ACCESS_TOKEN = propertiy.getProperty('CHANNEL_ACCESS_TOKEN');
+
+// メッセージ一覧
+var ERRORMESSAGE_NOT_IMG = "なーに？画像じゃないとリプちゃんわからない！";
+var ERRORMESSAGE_TRY_CATCH = "ごめん、文字が読めなかった！";
+
+// doPost関数（LINEからメッセージが送られてきたに呼び出される関数）
+function doPost(e) {
+  try {
+    var blob, message, replyText;
+    var webhookData = JSON.parse(e.postData.contents).events[0];
+    var userId = webhookData.source.userId;
+    var replyToken = webhookData.replyToken;
+  
+    // 画像が送られてきたら、文字起こしをする
+    if (webhookData.message.type === "image") {
+      blob = getLineContent(webhookData.message.id); // LINEから画像を取得する
+      replyText = getTextFromImg(blob);              // 画像から文字を取得する
+    }
+    // 画像じゃない場合、エラーメッセージを返す
+    else {
+      replyText = ERRORMESSAGE_NOT_IMG;
+    }
+    
+    sendReplyTextMessage(replyToken, replyText);
+
+  } catch (e){
+    // 関数内でエラーが起きた場合の処理
+    replyText = ERRORMESSAGE_TRY_CATCH;
+    sendReplyTextMessage(replyToken, replyText);
+  }
+}
+
+// テキストメッセージを返信する関数
+function sendReplyTextMessage(replyToken,replyText){
+  var url = "https://api.line.me/v2/bot/message/reply";
+  var headers = {"Content-Type": "application/json; charset=UTF-8", "Authorization": "Bearer " + CHANNEL_ACCESS_TOKEN};
+  var postData = {"replyToken": replyToken, "messages": [{"type": "text", "text": replyText}]};
+  var options = {"method": "POST", "headers": headers, "payload": JSON.stringify(postData)};
+  
+ return UrlFetchApp.fetch(url, options);
+}
+
+// LINEから送られてきた画像を取得する関数
+function getLineContent(messageId) {
+  var headers = {'Authorization': 'Bearer ' + CHANNEL_ACCESS_TOKEN};
+  var options = {'method': 'GET','headers': headers};
+  var url = 'https://api.line.me/v2/bot/message/' + messageId + '/content';
+  var blob = UrlFetchApp.fetch(url, options).getBlob();
+  return blob;
+}
+
+// 画像から文字を取得する関数
+function getTextFromImg(imgBlob) {
+  var resource = {title: imgBlob.getName(), mimeType: imgBlob.getContentType()};
+  var options = {ocr: true};
+
+  // Google Documentにファイルを作成し、画像を挿入してテキストを取得する
+  var imgFile = Drive.Files.insert(resource, imgBlob, options);
+  var doc = DocumentApp.openById(imgFile.id);
+  var returnText = doc.getBody().getText().replace("\n", "");
+  
+  Drive.Files.remove(imgFile.id); // Google Documentに作成したファイルを削除する
+
+  return returnText;
+}
